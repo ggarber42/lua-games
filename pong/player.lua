@@ -9,12 +9,19 @@ function Player:load()
 end
 
 function Player:update(dt)
+    self:move(dt)
+    self:checkBoundary()
+end
+
+function Player:move(dt)
      if love.keyboard.isDown('s') then
           self.y = self.y + self.speed * dt
      elseif love.keyboard.isDown('w') then
           self.y = self.y - self.speed * dt
      end
+end
 
+function Player:checkBoundary()
      if self.y < 0 then
           self.y = 0
      elseif self.y + self.height > love.graphics.getHeight() then
