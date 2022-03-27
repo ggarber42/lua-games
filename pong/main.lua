@@ -1,15 +1,19 @@
 require('player')
+require('ball')
 
 --em love, update e draw são as funções básicas
 
 function love.load()
      Player:load()
+     Ball:load()
 end
 
 function love.update(dt)
      Player:update(dt)
+     Ball:update(dt)
 end
 
 function love.draw()
      Player:draw()
+     Ball:draw()
 end
