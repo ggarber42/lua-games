@@ -63,10 +63,12 @@ end
 function Ball:score()
      if self.x < 0  then
           self:resetPosition(1)
+          Score.ai = Score.ai + 1
      end
 
      if self.x + self.width > love.graphics.getWidth() then
           self:resetPosition(-1)
+          Score.player = Score.player + 1
      end
 end
 

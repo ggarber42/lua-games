@@ -10,6 +10,8 @@ function love.load()
      Player:load()
      AI:load()
      Ball:load()
+     Score = {player = 0, ai = 0}
+     font = love.graphics.newFont(50)
 end
 
 function love.update(dt)
@@ -24,6 +26,13 @@ function love.draw()
      Player:draw()
      AI:draw()
      Ball:draw()
+     drawScore()
+end
+
+function drawScore()
+     love.graphics.setFont(font)
+     love.graphics.print('Player: '..Score.player, 50, 50)
+     love.graphics.print('AI: '..Score.ai, 1000, 50)
 end
 
 function checkCollision(a,b)
